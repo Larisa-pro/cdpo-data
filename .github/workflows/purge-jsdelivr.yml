@@ -1,0 +1,17 @@
+name: Purge jsDelivr cache
+on:
+  push:
+    branches: [main]
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr CDN
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/upp2026.csv"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/upp2027.csv"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/vo436n.json"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/IOM_choice"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/all_programms"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/ALL_programms_RZN"
+          curl -s "https://purge.jsdelivr.net/gh/Larisa-pro/cdpo-data@main/all_timeframes_2026_autumn"
